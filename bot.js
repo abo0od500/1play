@@ -48,7 +48,7 @@ const queue = new Map();
 var prefix = "1" 
 client.on('message', async msg => {
     //--
-    if (message.channel.id === process.env.BOT_CHAT_ID) {
+    if (msg.channel.id === process.env.BOT_CHAT_ID) {
  
     if (msg.author.bot) return undefined;
    

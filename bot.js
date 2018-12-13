@@ -47,6 +47,9 @@ const queue = new Map();
  
 var prefix = "1" 
 client.on('message', async msg => {
+    //--
+    if (message.channel.id === process.env.BOT_CHAT_ID) {
+ 
     if (msg.author.bot) return undefined;
    
     if (!msg.content.startsWith(prefix)) return undefined;
@@ -171,7 +174,8 @@ ${serverQueue.songs.map(song => `**${++index} -** ${song.title}`).join('\n')}
     }
  
     return undefined;
-});
+    }
+}); //--
  
 async function handleVideo(video, msg, voiceChannel, playlist = false) {
     const serverQueue = queue.get(msg.guild.id);
@@ -237,8 +241,8 @@ function play(guild, song) {
     serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
  
-const adminprefix = "$vip";
-const devs = ['274923685985386496'];
+const adminprefix = "1admin";
+const devs = ['482335925867642881'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;

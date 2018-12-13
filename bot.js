@@ -49,7 +49,6 @@ const queue = new Map();
 var prefix = "1" 
 client.on('message', async msg => {
     //--
-    if (message.channel.id === channelBot_id ) {
  
     if (msg.author.bot) return undefined;
    
@@ -175,8 +174,8 @@ ${serverQueue.songs.map(song => `**${++index} -** ${song.title}`).join('\n')}
     }
  
     return undefined;
-    }
-}); //--
+    
+}); 
  
 async function handleVideo(video, msg, voiceChannel, playlist = false) {
     const serverQueue = queue.get(msg.guild.id);

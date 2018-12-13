@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var channelBot_id = process.env.BOT_CHAT_ID;
  
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -49,6 +48,7 @@ const queue = new Map();
 var prefix = "1" 
 client.on('message', async msg => {
     //--
+    if (message.channel.id === process.env.BOT_CHAT_ID) {
  
     if (msg.author.bot) return undefined;
    
@@ -174,8 +174,8 @@ ${serverQueue.songs.map(song => `**${++index} -** ${song.title}`).join('\n')}
     }
  
     return undefined;
-    
-}); 
+    }
+}); //--
  
 async function handleVideo(video, msg, voiceChannel, playlist = false) {
     const serverQueue = queue.get(msg.guild.id);

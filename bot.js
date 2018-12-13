@@ -29,7 +29,7 @@ client.on('ready', () => {
 
 client.on('ready', () => {
   // Get the channel via ID
-  let channel = client.channels.get('522355021032194069');
+  let channel = client.channels.get('522860213309669391');
   channel.join()
   .then(connection => console.log('Connected'))
   .catch(console.error);

@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+var channelBot_id = process.env.BOT_CHAT_ID;
  
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -48,7 +49,7 @@ const queue = new Map();
 var prefix = "1" 
 client.on('message', async msg => {
     //--
-    if (message.channel.id === process.env.BOT_CHAT_ID) {
+    if (message.channel.id === channelBot_id ) {
  
     if (msg.author.bot) return undefined;
    

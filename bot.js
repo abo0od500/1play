@@ -124,6 +124,7 @@ ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
         }
     } else if (command === `skip`) {
         if (!msg.member.voiceChannel) return msg.channel.send('أنت لست بروم صوتي .');
+        if (!msg.member.voiceChannelID != client.voiceChannelID) return msg.channel.send('أنت لست بالروم صوتي .');
         if (!serverQueue) return msg.channel.send('لا يتوفر مقطع لتجآوزه');
         serverQueue.connection.dispatcher.end('تم تجآوز هذآ المقطع');
         return undefined;

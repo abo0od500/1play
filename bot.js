@@ -48,7 +48,7 @@ const queue = new Map();
 var prefix = "1" 
 client.on('message', async msg => {
     //--
-    if (msg.channal.id != process.env.BOTCHAT) return msg.channel.send('حاطين لك شات بوت ليه انت وراسك!!'); 
+    if (msg.channel.id != process.env.BOTCHAT) return msg.channel.send('حاطين لك شات بوت ليه انت وراسك!!'); 
     if (msg.author.voiceChannel != client.user.voiceChannel) return msg.channel.send('أنت لست بالروم صوتي .');
     if (msg.author.bot) return undefined;
    

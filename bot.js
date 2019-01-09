@@ -59,7 +59,7 @@ client.on('message', async msg => {
     const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
     const serverQueue = queue.get(msg.guild.id);
 	
-	serverQueue.connection.dispatcher.setVolumeLogarithmic(10);
+	//serverQueue.connection.dispatcher.setVolumeLogarithmic(10);
     let command = msg.content.toLowerCase().split(" ")[0];
     command = command.slice(prefix.length)
  

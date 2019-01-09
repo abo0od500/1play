@@ -88,6 +88,7 @@ client.on('message', async msg => {
                 await handleVideo(video2, msg, voiceChannel, true); // eslint-disable-line no-await-in-loop
             }
             return msg.channel.send(` **${playlist.title}** تم الإضآفة إلى قأئمة التشغيل`);
+			serverQueue.connection.dispatcher.setVolumeLogarithmic(50);
         } else {
             try {
  
